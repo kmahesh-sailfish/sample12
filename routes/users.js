@@ -6,12 +6,12 @@ var connection=mysql.createConnection({
     password:'tgor7glk44rmlm80',
     database:'rgxrisv4kau4y50h'
 });
-
+connection.connect();
 var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    connection.connect();
+
     connection.query('select * from usersList',function (err,rows,fields) {
         if(err) throw err;
         console.log('connection is established');
